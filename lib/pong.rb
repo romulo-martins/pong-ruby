@@ -1,25 +1,32 @@
 require 'gosu'
 require_relative 'ball'
-require_relative 'player1'
-require_relative 'player2'
+require_relative 'player'
 
 class Pong < Gosu::Window
   WIDTH  = 640
   HEIGHT = 480
   TILE   = 10
 
-  WIDTH_IN_TILE = WIDTH / TILE
-
   def initialize
     super WIDTH, HEIGHT, false, 1000 / 10
 
     @ball = Ball.new
-    @player1 = Player1.new 
-    @player2 = Player2.new
+    @player1 = Player.new 1, 10
+    @player2 = Player.new (WIDTH / TILE) - 2, 10
   end 
 
   def update
-    # @ball.update
+    if @ball.colide @player1
+      print 'Colidiu com player 1'
+      @ball.change_direction
+    end
+
+    if @ball.colide @player2
+      print 'Colidiu com player 2'
+      @ball.change_direction
+    end
+    
+    @ball.update
     @player1.update
     @player2.update
   end

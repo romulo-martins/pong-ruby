@@ -17,6 +17,14 @@ class Ball < Gosu::Window
     @y += @vel_y
   end
 
+  def colide player
+    # TODO: 
+  end
+
+  def change_direction
+    # TODO: 
+  end
+
   def draw
     Gosu.draw_rect(
       @x * Pong::TILE,

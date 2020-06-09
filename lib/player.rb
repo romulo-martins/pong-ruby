@@ -1,19 +1,19 @@
 require 'gosu'
 require_relative 'pong'
 
-class Player2
+class Player
   attr_accessor :x, :y
 
-  def initialize
-    @y = 10
-    @x = (Pong::WIDTH / Pong::TILE) - 2
+  def initialize(x, y)
+    @x = x
+    @y = y
+    @middle_tile = Pong::TILE/2
   end
 
-  def update
-  end
+  def update; end
 
   def draw
-    (0..5).each do |y|
+    (0..@middle_tile).each do |y|
         Gosu.draw_rect(
           @x * Pong::TILE,
           (@y - y) * Pong::TILE,
@@ -24,6 +24,6 @@ class Player2
     end
   end
 
-  def up;   @y -= Pong::TILE/2;  end
-  def down; @y += Pong::TILE/2;  end
+  def up;   @y -= @middle_tile; end
+  def down; @y += @middle_tile; end
 end
