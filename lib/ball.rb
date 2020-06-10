@@ -15,14 +15,18 @@ class Ball < Gosu::Window
   def update
     @x += @vel_x
     @y += @vel_y
+
+    if @y >= Pong::HEIGHT_IN_TILE || @y <= 0
+      @vel_y = @vel_y == 1 ? -1 : 1 
+    end
   end
 
   def colide player
-    # TODO: 
+    player.pos.include?([@x, @y])
   end
 
   def change_direction
-    # TODO: 
+    @vel_x = @vel_x == 1 ? -1 : 1
   end
 
   def draw

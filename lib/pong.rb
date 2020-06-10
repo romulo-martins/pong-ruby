@@ -7,22 +7,23 @@ class Pong < Gosu::Window
   HEIGHT = 480
   TILE   = 10
 
+  WIDTH_IN_TILE = (WIDTH / TILE)
+  HEIGHT_IN_TILE = (HEIGHT / TILE)
+
   def initialize
     super WIDTH, HEIGHT, false, 1000 / 10
 
     @ball = Ball.new
     @player1 = Player.new 1, 10
-    @player2 = Player.new (WIDTH / TILE) - 2, 10
+    @player2 = Player.new WIDTH_IN_TILE - 2, 10
   end 
 
   def update
     if @ball.colide @player1
-      print 'Colidiu com player 1'
       @ball.change_direction
     end
 
     if @ball.colide @player2
-      print 'Colidiu com player 2'
       @ball.change_direction
     end
     

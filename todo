@@ -4,6 +4,6 @@
 [x] Fazer o player 1.
 [x] Fazer player 2.
 [x] Fazer o movimento dos players.
-[ ] Fazer a colisão entre a bola e os players, em linha reta.
+[x] Fazer a colisão entre a bola e os players, em linha reta.
 [ ] Tratar o movimento da bola em diagonal.
 [ ] Fazer a pontuação.
