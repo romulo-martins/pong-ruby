@@ -11,7 +11,7 @@ class Pong < Gosu::Window
   HEIGHT_IN_TILE = (HEIGHT / TILE)
 
   def initialize
-    super WIDTH, HEIGHT, false, 1000 / 10
+    super WIDTH, HEIGHT, false, 1000 / 15
 
     @ball = Ball.new
     @player1 = Player.new 1, 10

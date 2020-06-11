@@ -28,8 +28,8 @@ class Player
     end
   end
 
-  def up;   @y -= 2; end
-  def down; @y += 2; end
+  def up;   @y -= @middle_tile; end
+  def down; @y += @middle_tile; end
 
   private 
 

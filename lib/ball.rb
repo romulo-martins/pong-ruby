@@ -8,8 +8,8 @@ class Ball < Gosu::Window
     @x = 15
     @y = 15
 
-    @vel_x = generate_position
-    @vel_y = 0
+    @vel_x = 1
+    @vel_y = 1
   end
 
   def update
@@ -17,7 +17,7 @@ class Ball < Gosu::Window
     @y += @vel_y
 
     if @y >= Pong::HEIGHT_IN_TILE || @y <= 0
-      @vel_y = @vel_y == 1 ? -1 : 1 
+      @vel_y *= -1
     end
   end
 
@@ -26,7 +26,8 @@ class Ball < Gosu::Window
   end
 
   def change_direction
-    @vel_x = @vel_x == 1 ? -1 : 1
+    @vel_x *= -1
+    @vel_y *= -1 
   end
 
   def draw
