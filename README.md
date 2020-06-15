@@ -2,7 +2,7 @@
 
 A simple pong game written in the ruby programming language, using the gosu library.
 
-<!-- <img src="media/screen.png" alt="drawing" width="250" height="250" /> -->
+<img src="media/pong_screen.png" alt="drawing" width="250" height="250" />
 
 ## Install dependencies
 
