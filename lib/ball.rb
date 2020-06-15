@@ -8,8 +8,8 @@ class Ball < Gosu::Window
     @x = 15
     @y = 15
 
-    @vel_x = 1
-    @vel_y = 1
+    @vel_x = generate_pos
+    @vel_y = generate_pos
   end
 
   def update
@@ -18,6 +18,10 @@ class Ball < Gosu::Window
 
     if @y >= Pong::HEIGHT_IN_TILE || @y <= 0
       @vel_y *= -1
+    end
+
+    if @x >= Pong::WIDTH_IN_TILE || @x <= 0
+      @x, @y = 15, 15
     end
   end
 
@@ -42,7 +46,7 @@ class Ball < Gosu::Window
 
   private 
 
-  def generate_position
+  def generate_pos
     [-1, 1][rand(0..1)]
   end
 end 

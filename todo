@@ -5,5 +5,7 @@
 [x] Fazer player 2.
 [x] Fazer o movimento dos players.
 [x] Fazer a colisão entre a bola e os players, em linha reta.
-[ ] Tratar o movimento da bola em diagonal.
+[x] Tratar o movimento da bola em diagonal.
+[ ] Fazer a bola reniciar quado sair da tela.
+[ ] Tornar o formato da bola redonda.
 [ ] Fazer a pontuação.
